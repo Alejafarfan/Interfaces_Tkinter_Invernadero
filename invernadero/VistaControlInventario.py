@@ -28,6 +28,10 @@ class VistaControlInventario(tk.Tk):
 
 
     def mostrar_invernaderos(self, invernaderos):
+        # Limpiar contenido anterior antes de mostrar nuevos datos
+        for widget in self.contenedor_central.winfo_children():
+            widget.destroy()
+
         for nombre, estado in invernaderos:
             fila = tk.Frame(self.contenedor_central, bg="white", pady=8)
             fila.pack()
